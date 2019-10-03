@@ -1,4 +1,4 @@
-package Connection;
+package connection;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
-import Player.IPlayer;
-import View.Window;
+import player.IPlayer;
+import view.Window;
 
 public class C_Holder extends Thread {
 	

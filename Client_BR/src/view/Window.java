@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.awt.Color;
 
@@ -35,7 +35,7 @@ public class Window extends JFrame {
 
 		setResizable(false);
 
-		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		setBackground(Color.GRAY);
 

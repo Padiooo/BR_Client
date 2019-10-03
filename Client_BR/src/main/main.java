@@ -1,8 +1,8 @@
 package main;
 
-import View.ButtonHolder;
-import View.FirstConnection;
-import View.Window;
+import view.ButtonHolder;
+import view.FirstConnection;
+import view.Window;
 
 public class main {
 
@@ -10,7 +10,7 @@ public class main {
 
 		ButtonHolder bt = new ButtonHolder();
 		
-		Window window = new Window(350, 80);
+		Window window = new Window(350, 100);
 		FirstConnection firstConnection = new FirstConnection();
 		window.setContentPane(firstConnection);
 
