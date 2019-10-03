@@ -39,7 +39,13 @@ public class C_Holder extends Thread {
 	@Override
 	public void run() {
 		while(true) {
-			
+			try {
+				writer.write("Je suis le player 1");
+				writer.newLine();
+				writer.flush();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

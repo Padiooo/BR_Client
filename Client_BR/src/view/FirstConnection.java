@@ -10,56 +10,38 @@ import java.net.UnknownHostException;
 
 import javax.swing.JPanel;
 
-public class FirstConnection extends JPanel implements ActionListener {
+public class FirstConnection extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private String errors = "zafazfzf";
+	private String errors = "";
 
-	public FirstConnection() {
-		ButtonHolder.tryConnection.addActionListener(this);
+	private int x;
+	private int y;
 
-		add(ButtonHolder.connectionString);
-		add(ButtonHolder.tryConnection);
+	public FirstConnection(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 
 	public void paintComponent(Graphics g) {
 
-		g.clearRect(0, 0, 350, 100);
+		g.clearRect(0, 0, x, y);
 
 		g.setColor(Color.GRAY);
-		g.fillRect(0, 0, 350, 100);
+		g.fillRect(0, 0, x, y);
 
-		if (errors.compareTo("") != 0) {
-			g.setColor(Color.BLACK);
-			g.drawString(errors, 100, 50);
-		}
+		g.setColor(Color.BLACK);
+		g.drawString(errors, x / 3, y / 2);
 
 	}
 
-	private void tryConnection(String ip) {
-		Socket socket;
-		try {
-			socket = new Socket(ip, 9999);
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-			printError(e.toString());
-		} catch (IOException e) {
-			e.printStackTrace();
-			printError(e.toString());
-		}
-		System.out.println("Connected");
 
-	}
-
-	private void printError(String errors) {
+	public void printError(String errors) {
 		this.errors = errors;
 		repaint();
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		tryConnection(ButtonHolder.connectionString.getText());
-	}
+
 
 }
