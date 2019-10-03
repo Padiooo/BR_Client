@@ -81,6 +81,16 @@ public class Player implements IPlayer {
 		return id_ball;
 	}
 
+	@Override
+	public void setDirection_x(int direction_x) {
+		this.direction_x = direction_x;
+	}
+
+	@Override
+	public void setDirection_y(int direction_y) {
+		this.direction_y = direction_y;
+	}
+
 	// --------------------------------------------------------
 
 	public int getDirection_x() {
@@ -91,12 +101,6 @@ public class Player implements IPlayer {
 		return direction_y;
 	}
 
-	public void setDirection_x(int direction_x) {
-		this.direction_x = direction_x;
-	}
 
-	public void setDirection_y(int direction_y) {
-		this.direction_y = direction_y;
-	}
 
 }

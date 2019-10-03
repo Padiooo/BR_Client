@@ -11,8 +11,10 @@ public interface IPlayer {
 	public boolean isAlive();
 	
 	public boolean die();
-	
-	public void setDirectionX() {};
+
+	public void setDirection_x(int direction_x);
+
+	public void setDirection_y(int direction_y);
 	
 	public void sendChanges(String command);
 
