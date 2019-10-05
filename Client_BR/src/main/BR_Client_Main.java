@@ -1,16 +1,12 @@
 package main;
 
-import view.ButtonHolder;
-import view.FirstConnection;
-import view.Window;
+import controller.Controller;
 
 public class BR_Client_Main {
 
 	public static void main(String[] args) {
 
-		ButtonHolder bt = new ButtonHolder();
+		new Controller();
 		
-		Window window = new Window(350, 100);
-
 	}
 }
