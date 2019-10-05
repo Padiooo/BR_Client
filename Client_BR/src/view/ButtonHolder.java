@@ -24,7 +24,6 @@ public class ButtonHolder extends Observable implements ActionListener {
 
 		b_try_connection.addActionListener(this);
 		b_ready.addActionListener(this);
-
 	}
 
 	@Override
