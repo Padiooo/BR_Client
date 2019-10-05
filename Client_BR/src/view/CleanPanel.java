@@ -16,8 +16,8 @@ public class CleanPanel extends JPanel {
 
 	private String message = "";
 
-	public int size_x;
-	public int size_y;
+	private int size_x;
+	private int size_y;
 
 	public CleanPanel(int size_x, int size_y) {
 		this.size_x = size_x;

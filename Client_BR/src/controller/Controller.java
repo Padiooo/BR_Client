@@ -39,13 +39,14 @@ public class Controller implements Observer {
 	public void update(Observable o, Object arg) {
 		if (arg.getClass() == String.class) {
 			tryConnection((String) arg);
-		} else if (arg.getClass() == boolean.class) {
+		} else if (arg.getClass() == Boolean.class) {
 			ready();
 		}
 	}
 	
 	private void ready() {
 		c_holder.start();
+		c_holder.sendReady();
 	}
 
 	private void tryConnection(String adress) {
@@ -60,12 +61,13 @@ public class Controller implements Observer {
 			pan.printMessage("Issues while connecting to server");
 			// e.printStackTrace();
 		}
+		
 		if (socket != null) {
 			int size_x = 200;
 			int size_y = 80;
 			c_holder = new C_Holder(socket);
 			win.close();
-			pan = new CleanPanel(pan.size_x, pan.size_y);
+			pan = new CleanPanel(size_x, size_y);
 			pan.add(bh.getB_Ready());
 			win = new Window(size_x, size_y, "Ready ?");
 			win.setContentPane(pan);
