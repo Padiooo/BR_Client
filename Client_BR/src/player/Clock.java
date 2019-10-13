@@ -14,7 +14,7 @@ public class Clock extends Thread {
 
 	@Override
 	public void run() {
-		while (!stop) {
+		while (!getStop()) {
 			try {
 				Thread.sleep(clock_time);
 			} catch (InterruptedException e) {
@@ -22,6 +22,10 @@ public class Clock extends Thread {
 			}
 			player.move();
 		}
+	}
+	
+	private synchronized boolean getStop() {
+		return stop;
 	}
 	
 	public void stopClock() {

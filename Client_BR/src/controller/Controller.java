@@ -47,6 +47,7 @@ public class Controller implements Observer {
 	private void ready() {
 		c_holder.start();
 		c_holder.sendReady();
+		win.close();
 	}
 
 	private void tryConnection(String adress) {

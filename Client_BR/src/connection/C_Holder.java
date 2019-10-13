@@ -59,15 +59,19 @@ public class C_Holder extends Thread {
 		switch (datas[0]) {
 		case "SETUP":
 			setup(datas);
+			System.out.println(data);
 			break;
 		case "START":
 			startGame();
+			System.out.println(data);
 			break;
 		case "DIE":
 			die();
+			System.out.println(data);
 			break;
 		case "DEATH_RECAP":
 			deathRecap(data);
+			System.out.println(data);
 		default:
 			updatePanel(datas);
 			break;
@@ -84,7 +88,7 @@ public class C_Holder extends Thread {
 		pan = new GamePanel(client_id, size_x, size_y);
 		win.setContentPane(pan);
 
-		player = new Player();
+		player = new Player(this);
 		clock = new Clock(clock_time, player);
 		listener_mouse = new MousePlayerListener(player);
 		listener_key = new KeyboardListener(player);
@@ -142,7 +146,7 @@ public class C_Holder extends Thread {
 		}
 	}
 
-	public static void sendMessage(String command) {
+	public void sendMessage(String command) {
 
 		if (player.isAlive()) {
 			try {

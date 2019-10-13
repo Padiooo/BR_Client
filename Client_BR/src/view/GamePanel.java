@@ -21,11 +21,11 @@ public class GamePanel extends JPanel {
 	private int[] players_id;
 
 	private int id_player;
-	private int size_player;
-	private int size_ball;
+	private int size_player = 50;
+	private int size_ball = 20;
 
-	public GamePanel(int client_id, int size_x, int size_y) {
-		this.client_id = client_id;
+	public GamePanel(int id_player, int size_x, int size_y) {
+		this.id_player = id_player;
 		this.size_x = size_x;
 		this.size_y = size_y;
 	}
@@ -37,6 +37,7 @@ public class GamePanel extends JPanel {
 		g.fillRect(0, 0, size_x, size_y);
 
 		if (data != null) {
+			g.fillRect(0, 0, 50, 50);
 			for (int id_player = 0; id_player < data.length; id_player++) {
 				if (this.id_player != players_id[id_player]) {
 					g.setColor(color_ennemy);

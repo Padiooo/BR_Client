@@ -1,5 +1,7 @@
 package player;
 
+import connection.C_Holder;
+
 public class Player implements IPlayer {
 
 	private int direction_x;
@@ -7,6 +9,12 @@ public class Player implements IPlayer {
 	private int[] ball_id = { 1, 1, 1 };
 
 	private boolean alive = true;
+	
+	private C_Holder c_holder;
+
+	public Player(C_Holder c_holder) {
+		this.c_holder = c_holder;
+	}
 
 	@Override
 	public String move() {
@@ -15,23 +23,22 @@ public class Player implements IPlayer {
 		if (direction_x != 0 || direction_y != 0) {
 			sendChanges(command);
 		}
-
 		return command;
 	}
 
 	@Override
 	public boolean shoot(int mouse_x, int mouse_y) {
-		
+
 		int id_ball = getIdBall();
-		
-		if(id_ball != -1) {
-			
+
+		if (id_ball != -1) {
+
 			new BallShoot(this, id_ball).start();
-			
+
 			String command = String.format("shoot %d %d %d", id_ball, mouse_x, mouse_y);
-			
+
 			sendChanges(command);
-			
+
 			return true;
 		}
 
@@ -40,11 +47,11 @@ public class Player implements IPlayer {
 
 	@Override
 	public boolean reload(int id_ball) {
-		
-		if(id_ball >= 0 && id_ball <= 2) {
+
+		if (id_ball >= 0 && id_ball <= 2) {
 			ball_id[id_ball] = 1;
 			String command = String.format("reload %d", id_ball);
-			
+
 			sendChanges(command);
 		}
 
@@ -64,7 +71,7 @@ public class Player implements IPlayer {
 
 	@Override
 	public void sendChanges(String command) {
-
+		c_holder.sendMessage(command);
 	}
 
 	private int getIdBall() {
@@ -100,7 +107,5 @@ public class Player implements IPlayer {
 	public int getDirection_y() {
 		return direction_y;
 	}
-
-
 
 }
