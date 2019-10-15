@@ -21,13 +21,15 @@ public class GamePanel extends JPanel {
 	private int[] players_id;
 
 	private int id_player;
-	private int size_player = 50;
-	private int size_ball = 20;
+	private int size_player;
+	private int size_ball;
 
-	public GamePanel(int id_player, int size_x, int size_y) {
+	public GamePanel(int id_player, int size_x, int size_y, int size_player, int size_ball) {
 		this.id_player = id_player;
-		this.size_x = size_x;
-		this.size_y = size_y;
+		this.size_x = size_x + 8;
+		this.size_y = size_y + 38;
+		this.size_player = size_player;
+		this.size_ball = size_ball;
 	}
 
 	public void paintComponent(Graphics g) {

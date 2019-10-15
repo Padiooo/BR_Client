@@ -14,7 +14,7 @@ public class Window extends JFrame {
 
 		setTitle("Client " + id);
 
-		setSize(x, y);
+		setSize(x + 8, y + 38);
 
 		setLocationRelativeTo(null);
 
@@ -30,7 +30,7 @@ public class Window extends JFrame {
 	public Window(int x, int y, String title) {
 
 		setTitle(title);
-		setSize(x, y);
+		setSize(x + 8, y + 38);
 		setLocationRelativeTo(null);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);

@@ -14,8 +14,8 @@ public class MousePlayerListener extends Observable implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		int x = e.getX() - 9;
-		int y = e.getY() - 38;
+		int x = e.getX() - 9 + player.getSizePlayer() / 2;
+		int y = e.getY() - 38 + player.getSizePlayer() / 2;
 		player.shoot(x, y);
 	}
 
