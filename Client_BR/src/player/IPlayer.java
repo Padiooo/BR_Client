@@ -11,6 +11,8 @@ public interface IPlayer {
 	public boolean isAlive();
 	
 	public boolean die();
+	
+	public int getSizePlayer();
 
 	public void setDirection_x(int direction_x);
 

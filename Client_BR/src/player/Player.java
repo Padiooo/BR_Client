@@ -10,10 +10,13 @@ public class Player implements IPlayer {
 
 	private boolean alive = true;
 	
+	public int size_player;
+	
 	private C_Holder c_holder;
 
-	public Player(C_Holder c_holder) {
+	public Player(C_Holder c_holder, int size_player) {
 		this.c_holder = c_holder;
+		this.size_player = size_player;
 	}
 
 	@Override
@@ -96,6 +99,11 @@ public class Player implements IPlayer {
 	@Override
 	public void setDirection_y(int direction_y) {
 		this.direction_y = direction_y;
+	}
+	
+	@Override
+	public int getSizePlayer() {
+		return size_player;
 	}
 
 	// --------------------------------------------------------
